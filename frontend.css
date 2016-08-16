@@ -1,0 +1,138 @@
+body.advisor-page {
+	background-color: #ffffff;
+	color: #333333;
+	font-family: 'Roboto', sans-serif;
+}
+
+.advisor-page h3 {
+	font-weight: 300;
+	margin-bottom: 10px;
+	font-size: 1.5em;
+}
+
+.wpsfa-products-wrapper {
+	display: table;
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0 30px;
+}
+
+.wpsfa-products-row {
+	display: table-row;
+}
+
+.wpsfa-product-image,
+.wpsfa-product-descr {
+	display: table-cell;
+	vertical-align: top;
+}
+
+.wpsfa-product-image {
+	width: 300px;
+	padding-right: 50px;
+}
+
+.wpsfa-product-title {
+	font-weight: 500;
+	font-size: 1.5em;
+	color: #303030;
+	margin-bottom: 10px;
+}
+
+.wpsfa-product-meta {
+	margin-bottom: 3px;
+}
+
+.wpsfa-advisor-checkbox-label {
+	display: inline-block;
+}
+
+.wpsfa-advisor-radiobutton {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.wpsfa-advisor-form-item {
+	margin-bottom: 10px;
+}
+
+.wpsfa-advisor-form-section {
+	display: table-cell;
+	padding-right: 50px;
+}
+
+.advisor-products-list #loader-container {
+	position: relative;
+	height: 600px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+#loader {
+	display: block;
+	position: relative;
+	left: 50%;
+	top: 50%;
+	width: 150px;
+	height: 150px;
+	margin: -75px 0 0 -75px;
+	border-radius: 50%;
+	border: 3px solid transparent;
+	border-top-color: #3498db;
+	-webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+	animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+#loader:before {
+	content: "";
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	right: 5px;
+	bottom: 5px;
+	border-radius: 50%;
+	border: 3px solid transparent;
+	border-top-color: #e74c3c;
+	-webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+	animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+#loader:after {
+	content: "";
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	right: 15px;
+	bottom: 15px;
+	border-radius: 50%;
+	border: 3px solid transparent;
+	border-top-color: #f9c922;
+	-webkit-animation: spin 1.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+	animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+@-webkit-keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg); /* Chrome, Opera 15+, Safari 3.1+ */
+		-ms-transform: rotate(0deg); /* IE 9 */
+		transform: rotate(0deg); /* Firefox 16+, IE 10+, Opera */
+	}
+	100% {
+		-webkit-transform: rotate(360deg); /* Chrome, Opera 15+, Safari 3.1+ */
+		-ms-transform: rotate(360deg); /* IE 9 */
+		transform: rotate(360deg); /* Firefox 16+, IE 10+, Opera */
+	}
+}
+
+@keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg); /* Chrome, Opera 15+, Safari 3.1+ */
+		-ms-transform: rotate(0deg); /* IE 9 */
+		transform: rotate(0deg); /* Firefox 16+, IE 10+, Opera */
+	}
+	100% {
+		-webkit-transform: rotate(360deg); /* Chrome, Opera 15+, Safari 3.1+ */
+		-ms-transform: rotate(360deg); /* IE 9 */
+		transform: rotate(360deg); /* Firefox 16+, IE 10+, Opera */
+	}
+}
