@@ -4,7 +4,7 @@ jQuery(document).ready(function($){
 		radioClass: 'iradio_flat-blue'
 	});
 
-	$('.wpsfa-icheck').on('ifChecked', function(){
+	$('.wpsfa-icheck').on('ifChanged', function(){
 		var $button = $(this),
 			$form = $button.closest('#advisor-form'),
 			$container = $form.closest('.advisor-container'),

@@ -18,6 +18,7 @@ include_once $plugin_dir_path . 'product-metaboxes.php';
 /* Load plugin textdomain */
 add_action( 'plugins_loaded', 'wpsfa_load_textdomain' );
 function wpsfa_load_textdomain() {
+	global $plugin_dir_path;
 	load_plugin_textdomain( 'wpsfa', FALSE, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 }
 
@@ -25,16 +26,16 @@ function wpsfa_load_textdomain() {
 add_action( 'wp_enqueue_scripts', 'wpsfa_register_frontend_scripts' );
 function wpsfa_register_frontend_scripts() {
 	global $plugin_dir_url;
-	wp_register_style( 'wpsfa-frontend-css', $plugin_dir_url . '/frontend.css' );
+	wp_register_style( 'wpsfa-frontend-css', $plugin_dir_url . 'frontend.css' );
 	wp_enqueue_style( 'wpsfa-frontend-css' );
 
-	wp_register_style( 'icheck-flat', $plugin_dir_url . '/vendor/icheck/skins/flat/blue.css' );
+	wp_register_style( 'icheck-flat', $plugin_dir_url . 'vendor/icheck/skins/flat/blue.css' );
 	wp_enqueue_style( 'icheck-flat' );
 
-	wp_register_script( 'icheck', $plugin_dir_url . '/vendor/icheck/icheck.min.js', array( 'jquery' ), FALSE, TRUE );
+	wp_register_script( 'icheck', $plugin_dir_url . 'vendor/icheck/icheck.min.js', array( 'jquery' ), FALSE, TRUE );
 	wp_enqueue_script( 'icheck' );
 
-	wp_register_script( 'wpsfa-frontend', $plugin_dir_url . '/frontend.js', array( 'jquery' ), FALSE, TRUE );
+	wp_register_script( 'wpsfa-frontend', $plugin_dir_url . 'frontend.js', array( 'jquery' ), FALSE, TRUE );
 	wp_localize_script( 'wpsfa-frontend', 'wpsfaAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 	wp_enqueue_script( 'wpsfa-frontend' );
 }
@@ -126,7 +127,7 @@ function wpsfa_advisor_redirect() {
 
 	if ( array_key_exists( 'pagetype', $template ) AND $template['pagetype'] == 'advisor' ) {
 
-		include $plugin_dir_path . '/templates/advisor-page.php';
+		include $plugin_dir_path . 'templates/advisor-page.php';
 		exit;
 	}
 }
@@ -178,7 +179,7 @@ function wpsfa_build_product_filter_args() {
 		'post_type' => 'demo-product',
 		'posts_per_page' => - 1,
 		'offset' => 0,
-		'order' => 'DESC',
+		'order' => 'ASC',
 		'orderby' => 'ID',
 		'post_status' => 'publish',
 		'ignore_sticky_posts' => TRUE,
